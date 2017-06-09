@@ -257,7 +257,7 @@ def wifi_scan(do_output, do_deauth, verbose, iface=None):
 
     def channelhop(iface):
         channel = 1
-        while channel < 15:
+        while channel < 14:
             if do_channelhop:
                 try:
                     os.system('iwconfig {0} channel {1}'.format(iface, channel))
@@ -266,7 +266,7 @@ def wifi_scan(do_output, do_deauth, verbose, iface=None):
                     sys.exit(1)
                     
                 sleep(0.1)
-                if channel >= 14:
+                if channel >= 13:
                     channel = 1
                     continue
                 channel += 1
