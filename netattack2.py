@@ -286,6 +286,7 @@ def wifi_scan(do_output, do_deauth, verbose, iface=None):
         print('\n{0}Turning on {1}MONITORING {0}mode ...{2}'.format(G, R, N))
 
     enable_monitor_mode(iface)
+    os.system('airmon-ng check kill')
 
     thread_channelhop = Thread(target=channelhop, args=[iface])
     thread_channelhop.daemon = True
