@@ -152,7 +152,7 @@ def get_iface():
     iface_dict = {}
     iface = ''
     try:
-        _ = os.listdir('/sys/class/net/')
+        _ = os.listdir('/sys/class/net/') 
     except:
         print('{0}ERROR: Unable to detect interfaces. Please type interface-name manually.'.format(R))
         try:
